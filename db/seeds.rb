@@ -16,12 +16,11 @@ cards = sample_cards.map { |card| Card.create(deck_id:  deck.id,
                                        answer:   card[1])}
 
 names = Array.new(50) { Faker::Name.first_name }.uniq
-names.sample(10) { |user| User.create(name: user, password: user) }
+names.sample(10).each { |user| User.create(name: user, password_hash: user) }
 
 20.times do |i|
-  Round.create(user_id: (rand(10) +1), deck_id: 1) do |round|
-    cards.each do |card|
-      Guess.create(round_id: = round.id, card_id: card.id, count: (rand(3) + 1), answered: true)
-    end
+  round = Round.create(user_id: User.all.sample.id, deck_id: deck.id)
+  cards.each do |card|
+    Guess.create(round_id: round.id, card_id: card.id, count: (rand(3) + 1), answered: true)
   end
 end
