@@ -12,6 +12,11 @@
 <body>
 <h1>Flash Forward</h1>
 <h3>Your Flashcard Game Center</h3>
+<% if logged_in? %>
+  <nav class="nav_bar"><a href="/users/<%= session[:user_id] %>"><%= current_user.name %></a> | <a href="/users/logout">Logout</a> | <a href="/">Home</a></nav>
+<% else %>
+  <nav class="nav_bar"><a href="/users/new">Register</a> | <a href="/users/login">Login</a> | <a href="/">Home</a></nav>
+<% end %>
   <div class="flash"><%= flash[:message] %></div>
   <%= yield %>
 </body>
