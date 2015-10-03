@@ -16,7 +16,7 @@ cards = sample_cards.map { |card| Card.create(deck_id:  deck.id,
                                        answer:   card[1])}
 
 names = Array.new(50) { Faker::Name.first_name }.uniq
-names.sample(10).each { |user| User.create(name: user, password_hash: user) }
+names.sample(10).each { |user| User.create(name: user, password: user) }
 
 20.times do |i|
   round = Round.create(user_id: User.all.sample.id, deck_id: deck.id)
