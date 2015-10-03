@@ -1,0 +1,11 @@
+def current_user
+  if session[:user_id]
+    return User.find_by(session[:user_id])
+  else
+    return nil
+  end
+end
+
+def logged_in?
+  sessions[:user_id]
+end
