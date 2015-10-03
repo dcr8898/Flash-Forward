@@ -6,7 +6,7 @@ class Round < ActiveRecord::Base
 
   def available_cards
     all_cards = self.card_ids
-    spent_cards = self.guesses.map { |guess| guess.card_id if guess.answered = true }
+    spent_cards = self.guesses.map { |guess| guess.answered ? guess.card_id : nil }.compact
 
     all_cards - spent_cards
   end
