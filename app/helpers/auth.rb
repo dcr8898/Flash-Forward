@@ -7,5 +7,5 @@ def current_user
 end
 
 def logged_in?
-  sessions[:user_id]
+  session[:user_id]
 end
