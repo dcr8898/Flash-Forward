@@ -9,12 +9,12 @@ post '/guesses/:guess_id' do
   guess.increment(:count)
   if guess.card.correct?(params[:answer])
     guess.answered = true
-    "correct"
+    flash[:message] = "Correct!"
   else
-    "incorrect"
+    flash[:message] = "Wrong! Sorry :("
   end
 
-  # redirect "/rounds/#{guess.round_id}"
+  redirect "/rounds/#{guess.round_id}"
 end
 
 
