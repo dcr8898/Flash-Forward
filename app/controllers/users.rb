@@ -23,7 +23,7 @@ post '/users/login' do
   if user && user.password == user_params[:password]
     session[:user_id] = user.id
     flash[:message] = "Successfully logged in."
-    redirect '/'
+    redirect "/users/#{user.id}"
   else
     flash[:message] = "Cannot log in."
     redirect '/users/login'
