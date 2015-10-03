@@ -6,6 +6,6 @@ get '/rounds/:round_id/card' do
   else
     next_card_id = available_cards.sample
     @guess = Guess.find_or_create_by(round_id: @round.id, card_id: next_card_id)
-    erb :'rounds/edit'
+    erb :'cards/show'
   end
 end
