@@ -20,7 +20,7 @@ end
 post '/users/login' do
   user_params = params[:user]
   user = User.find_by(name: user_params[:name])
-  if user && user.password_hash == user_params[:password_hash]
+  if user && user.password == user_params[:password]
     session[:user_id] = user.id
     flash[:message] = "Successfully logged in."
     redirect '/'
