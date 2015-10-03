@@ -2,3 +2,16 @@ h1, h3, a {
   color: pink;
   text-align: center;
 }
+
+#question {
+  float:left;
+}
+
+#answer {
+  float: right;
+}
+
+#play {
+  position:absolute;
+  bottom:150px;
+}

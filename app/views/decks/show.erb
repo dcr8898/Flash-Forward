@@ -1,0 +1,19 @@
+<h2>Deck: <%= @deck.name %></h2>
+
+<div id='question'
+  <h4>Questions:</h4>
+  <% @cards.each do |card| %>
+   <p><%= card.question %></p>
+  <% end %>
+</div>
+
+<div id='answer'>
+  <h4>Answer:</h4>
+  <% @cards.each do |card| %>
+    <p><%= card.answer %></p>
+  <% end %>
+</div>
+
+<div id='play'>
+  <a href="/rounds/<%=@round.id%>/card">Play Deck!</a>
+</div>
