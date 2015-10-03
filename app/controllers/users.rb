@@ -35,3 +35,7 @@ get '/users/logout' do
   session.clear
   redirect '/'
 end
+
+get '/users/:id' do
+  erb :'users/show'
+end
