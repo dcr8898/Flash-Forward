@@ -1,9 +1,3 @@
-get '/guesses/:guess_id' do
-  @guess = Guess.find_by(id: params[:guess_id])
-
-  erb :'guesses/show'
-end
-
 post '/guesses/:guess_id' do
   guess = Guess.find_by(id: params[:guess_id])
   guess.increment!(:count)
@@ -14,7 +8,5 @@ post '/guesses/:guess_id' do
     flash[:message] = "Wrong! Sorry :("
   end
 
-  redirect "/rounds/#{guess.round_id}"
+  redirect "/rounds/#{guess.round_id}/card"
 end
-
-
