@@ -1,10 +1,15 @@
 <h2>Deck: <%= @deck.name %></h2>
-<h3 id='question'>Questions:</h3>
-<% @cards.each do |card| %>
- <p><%= card.question %></p>
-<% end %>
 
-<h3 id='answer'>Answers:</h3>
-<% @cards.each do |card| %>
-  <p><%= card.answer %></p>
-<% end %>
+<div id='question'
+  <h4>Questions:</h4>
+  <% @cards.each do |card| %>
+   <p><%= card.question %></p>
+  <% end %>
+</div>
+
+<div id='answer'>
+  <h4>Answer:</h4>
+  <% @cards.each do |card| %>
+    <p><%= card.answer %></p>
+  <% end %>
+</div>
