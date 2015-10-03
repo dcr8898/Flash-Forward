@@ -1,3 +1,8 @@
+get '/decks' do
+  @decks = Deck.all
+  erb :'index'
+end
+
 get '/decks/:deck_id' do
   user = User.find_by(id: session[:user_id])
   @deck = Deck.find_by(id: params[:deck_id])
