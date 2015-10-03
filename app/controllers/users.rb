@@ -18,18 +18,6 @@ end
 
 
 post '/users/login' do
-  # if user = User.find_by(name: params[:user][:name])
-  #   if params[:user][:password_hash] == user.password_hash
-  #     session[:user_id] = user.id
-  #     redirect "/users/#{user.id}"
-  #   else
-  #     @errors = ["Password doesn't match username!"]
-  #     redirect '/users/login'
-  #   end
-  # else
-  #   @errors = ["Username doesn't exist!"]
-  #   redirect '/users/login'
-  # end
   user_params = params[:user]
   user = User.find_by(name: user_params[:name])
   if user && user.password_hash == user_params[:password_hash]
@@ -48,6 +36,5 @@ get '/users/logout' do
 end
 
 get '/users/:id' do
-
   erb :'users/show'
 end
