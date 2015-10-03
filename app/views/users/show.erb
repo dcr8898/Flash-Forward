@@ -1,0 +1,12 @@
+<div class="container">
+  <% #current_user = User.find(session[:user_id]) %>
+  <% current_user = User.find(1) %>
+  <h2><%= current_user.name %> </h2>
+  <% current_user.rounds.each do |round| %>
+        <h4>Deck Name: <%= round.deck.name %></h4>
+        <h4>Date Played: <%= round.created_at %></h4>
+        <h4>Cards in Deck: <%= round.cards.count %></h4>
+        <h4>First Guest Correct: <%= round.answered_first_try %></h4>
+        <h4>Total Guesses: <%= round.total_guesses %></h4>
+        <% end %>
+</div>
