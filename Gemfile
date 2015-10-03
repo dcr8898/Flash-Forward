@@ -6,6 +6,7 @@ gem 'pg'
 # Sinatra driver
 gem 'sinatra'
 gem 'sinatra-contrib'
+gem 'sinatra-flash'
 
 gem 'activesupport', '~>4.2.0'
 gem 'activerecord', '~>4.2.0'
