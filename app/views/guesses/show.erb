@@ -1,0 +1,19 @@
+<h3><%= @guess.deck.name %><h3>
+<main class='form-wrapper' role="main">
+  <% if @errors %>
+    <div class="errors-wrapper">
+      <span>Your post could not be saved:</span>
+      <ul class="errors">
+        <% @errors.each do |error| %>
+          <li class="error"><%= error %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <p><%= @guess.card.question %></p>
+  <form method="post" action=<%= "/guesses/#{@guess.id}" %>>
+    <label for="answer" >Your answer:</label>
+    <input name="answer" type="text" />
+    <input type="submit" value="submit guess" class="button">
+  </form>
+</main>
