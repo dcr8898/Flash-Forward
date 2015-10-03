@@ -2,10 +2,6 @@ get '/users/new' do
   erb :'users/new'
 end
 
-get '/users/login' do
-  erb :'users/login'
-end
-
 post '/users' do
   @user = User.new(params[:user])
   if @user.save
@@ -16,18 +12,21 @@ post '/users' do
   end
 end
 
+get '/users/login' do
+  erb :'users/login'
+end
+
+
 post '/users/login' do
-  if user = User.find_by(name: params[:user][:name])
-    if params[:user][:password_hash] == user.password_hash
-      session[:user_id] = user.id
-      redirect "/users/#{user.id}"
-    else
-      @errors = ["Password doesn't match username!"]
-      erb :'users/login'
-    end
+  user_params = params[:user]
+  user = User.find_by(name: user_params[:name])
+  if user && user.password_hash == user_params[:password_hash]
+    session[:user_id] = user.id
+    flash[:message] = "Successfully logged in."
+    redirect '/'
   else
-    @errors = ["Username doesn't exist!"]
-    erb :'users/login'
+    flash[:message] = "Cannot log in."
+    redirect '/users/login'
   end
 end
 
@@ -37,5 +36,6 @@ get '/users/logout' do
 end
 
 get '/users/:id' do
+  @user = User.find_by(id: params[:id])
   erb :'users/show'
 end
