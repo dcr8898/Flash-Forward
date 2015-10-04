@@ -9,9 +9,14 @@ get '/decks/new' do
 end
 
 post '/decks' do
-  deck = Deck.create(params[:deck])
-  flash[:message] = "Deck Created!"
-  redirect "/decks/#{deck.id}/cards/new"
+  deck = Deck.new(params[:deck])
+  if deck.save
+    flash[:message] = "Deck Created!"
+    redirect "/decks/#{deck.id}/cards/new"
+  else
+    flash[:message] = "Couldn't create deck."
+    redirect "/decks/new"
+  end
 end
 
 get '/decks/:deck_id' do
