@@ -15,5 +15,8 @@
 </div>
 
 <div id='play'>
-  <a href="/rounds/<%=@round.id%>/card">Play Deck!</a>
+  <form method="post" action="/rounds">
+    <input type="hidden" name="deck_id" value=<%= @deck.id %> />
+    <input type="submit" value="<%= "Play '#{@deck.name}'" %>" />
+  </form>
 </div>
