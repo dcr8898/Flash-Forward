@@ -1,5 +1,11 @@
 
-<h2> Sign up now to play: </h2>
+<% if current_user %>
   <% @decks.each do |deck| %>
-    <li><%= deck.name %><li>
+    <li><a href="/decks/<%= deck.id %>"><%= deck.name %></a></li>
   <% end %>
+<% else %>
+  <h2> Sign up now to play: </h2>
+    <% @decks.each do |deck| %>
+      <li><%= deck.name %><li>
+    <% end %>
+<% end %>
