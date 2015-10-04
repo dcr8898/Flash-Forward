@@ -10,7 +10,7 @@ end
 
 post '/decks' do
   Deck.create(params[:deck])
-  redirect '/card/new'
+  redirect '/cards/new'
 end
 
 get '/decks/:deck_id' do
