@@ -10,6 +10,7 @@ end
 
 post '/decks' do
   deck = Deck.create(params[:deck])
+  flash[:message] = "Deck Created!"
   redirect "/decks/#{deck.id}/cards/new"
 end
 
