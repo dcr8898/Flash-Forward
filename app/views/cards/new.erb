@@ -1,0 +1,10 @@
+<h2>Create new cards:</h2>
+<form action="/decks/<%= @deck.id %>/cards" method="post">
+  <label for="card entry">Card question:</label>
+  <input type="text" name="card[question]"/>
+  <label for="card answer"></label>Card answer:</label>
+  <input type="text" name="card[answer]"/>
+  <input type="submit" value="Create Card!"/>
+</form>
+
+<a href="/">Finish Card Creation</a>
