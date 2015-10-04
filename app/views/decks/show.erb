@@ -1,22 +1,21 @@
-<h2>Deck: <%= @deck.name %></h2>
-
-<div id='question'
-  <h4>Questions:</h4>
-  <% @cards.each do |card| %>
-   <p><%= card.question %></p>
-  <% end %>
-</div>
-
-<div id='answer'>
-  <h4>Answer:</h4>
-  <% @cards.each do |card| %>
-    <p><%= card.answer %></p>
-  <% end %>
-</div>
-
-<div id='play'>
-  <form method="post" action="/rounds">
-    <input type="hidden" name="deck_id" value=<%= @deck.id %> />
-    <input type="submit" value="<%= "Play '#{@deck.name}'" %>" />
-  </form>
+<div class="container">
+  <div id='deck_name'><h3>Deck: <%= @deck.name %></h3></div>
+  <div id='play'>
+    <form method="post" action="/rounds">
+      <input type="hidden" name="deck_id" value=<%= @deck.id %> />
+      <input type="submit" value="<%= "Play '#{@deck.name}'" %>" />
+    </form>
+  </div>
+  <div id='question'>
+    <h4>Questions:</h4>
+    <% @cards.each do |card| %>
+      <p><%= card.question %></p>
+    <% end %>
+  </div>
+  <div id='answer'>
+    <h4>Answer:</h4>
+    <% @cards.each do |card| %>
+      <p><%= card.answer %></p>
+    <% end %>
+  </div>
 </div>

@@ -1,9 +1,16 @@
-<form method="post" action="/users/login">
-    <label for="user_name_input">Username: </label>
-    <input id="user_name_input" name="user[name]" type="text" value="">
-
-    <label for="user_password_hash_input">Password: </label>
-    <input id="user_password_hash_input" name="user[password]" type="password" value="">
-
-    <input type="submit" value="Log in" class="button">
-</form>
+<div class="container">
+  <h4>Login:</h4>
+</div>
+<div class="container">
+  <form role="form" method="post" action="/users/login">
+    <div class="form-group">
+      <label for="user_name_input">Username: </label>
+      <input class="form_control" id="user_name_input" name="user[name]" type="text" value="" placeholder="Enter username">
+    </div>
+    <div class="form-group">
+      <label for="user_password_hash_input">Password: </label>
+      <input class="form_control" id="user_password_hash_input" name="user[password]" type="password" value="" placeholder="Enter password">
+    </div>
+      <input class="btn btn-default" type="submit" value="Log in">
+  </form>
+</div>

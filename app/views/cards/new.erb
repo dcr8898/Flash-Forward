@@ -1,10 +1,17 @@
-<h2>Create new cards:</h2>
-<form action="/decks/<%= @deck.id %>/cards" method="post">
-  <label for="card entry">Card question:</label>
-  <input type="text" name="card[question]"/>
-  <label for="card answer"></label>Card answer:</label>
-  <input type="text" name="card[answer]"/>
-  <input type="submit" value="Create Card!"/>
-</form>
-
-<a href="/">Finish Card Creation</a>
+<div class="container">
+  <h3>Create new cards:</h3>
+</div>
+<div class="container">
+  <form role="form" action="/decks/<%= @deck.id %>/cards" method="post">
+    <div class="form-group">
+      <label for="card entry">Card question:</label>
+      <input class="form-control" type="text" name="card[question]"/>
+    <div class="form-group">
+      <label for="card answer"></label>Card answer:</label>
+      <input class="form-control" type="text" name="card[answer]"/>
+    <input class="btn btn-default" type="submit" value="Create Card!"/>
+  </form>
+</div>  
+<div class="container">
+  <h5><a href="/">Finish Card Creation</a></h5>
+</div>

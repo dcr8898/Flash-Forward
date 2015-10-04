@@ -1,16 +1,20 @@
-
 <% if current_user %>
-<h1><a href="/decks/new">Create a New Deck!</a></h1>
-  <% @decks.each do |deck| %>
-  <ul>
-    <li><a href="/decks/<%= deck.id %>"><%= deck.name %></a></li>
-  </ul>
-  <% end %>
-<% else %>
-  <h2> Sign up now to play: </h2>
+  <div class="container">
+    <h4><a href="/decks/new">Create a New Deck!</a></h4>
+  </div>
+  <div class="container">
+  <h4>or play one of these decks:</h4>
     <% @decks.each do |deck| %>
-    <ul>
-      <li><%= deck.name %></li>
-    </ul>
+      <h5><a href="/decks/<%= deck.id %>"><%= deck.name %></a></h5>
     <% end %>
+  </div>
+<% else %>
+  <div class="container">
+    <h4>Sign up or login to play one of the below decks, or make your own!</h4>
+  </div>
+  <div class="container">
+    <% @decks.each do |deck| %>
+      <h5><%= deck.name %></h5>
+    <% end %>
+  </div>
 <% end %>

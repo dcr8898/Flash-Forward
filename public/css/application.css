@@ -1,21 +1,18 @@
-h1, h3, a {
+/* h1, h3, a {
   color: pink;
   text-align: center;
 }
+*/
 
 #question {
   float:left;
+  margin-left: 20%;
 }
 
 #answer {
   float: right;
+  margin-right: 20%;
 }
 
-#play {
-  position:absolute;
-  bottom:150px;
-}
 
-.nav_bar {
-  text-align: center;
-}
+

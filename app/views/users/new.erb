@@ -1,18 +1,26 @@
 <% if @errors %>
-  <div><span>Something went wrong...</span>
-    <ul>
-      <% @errors.each do |error| %>
-        <li>- <%= error %></li>
-        <% end %>
-    </ul>
+  <div class="container">
+    <span>Something went wrong...</span>
+      <ul>
+        <% @errors.each do |error| %>
+          <li>- <%= error %></li>
+          <% end %>
+      </ul>
   </div>
 <% end %>
-<form method="post" action="/users">
-    <label for="user_name_input">Username: </label>
-    <input id="user_name_input" name="user[name]" type="text" value="">
-
-    <label for="user_password_hash_input">Password: </label>
-    <input id="user_password_hash_input" name="user[password]" type="password" value="">
-
-    <input type="submit" value="Sign up!" class="button">
-</form>
+<div class="container">
+  <h4>Create your username and password:</h4>
+</div>
+<div class="container">
+  <form role="form" method="post" action="/users">
+    <div class="form-group">
+      <label for="user_name_input">Username: </label>
+      <input class="form-control" id="user_name_input" name="user[name]" type="text" value="" placeholder="Enter new username">
+    </div>
+    <div class="form-group">
+      <label for="user_password_hash_input">Password: </label>
+      <input class="form-control" id="user_password_hash_input" name="user[password]" type="password" value="" placeholder="Enter new password">
+    </div>
+      <input class="btn btn-default" type="submit" value="Sign up">
+  </form>
+</div>
