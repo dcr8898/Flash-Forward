@@ -4,7 +4,13 @@ get '/decks' do
 end
 
 get '/decks/new' do
-  
+  @deck = Deck.new
+  erb :'/decks/new'
+end
+
+post '/decks' do
+  Deck.create(params[:deck])
+  redirect '/card/new'
 end
 
 get '/decks/:deck_id' do
