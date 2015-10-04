@@ -3,6 +3,22 @@ get '/decks' do
   erb :'index'
 end
 
+get '/decks/new' do
+  @deck = Deck.new
+  erb :'/decks/new'
+end
+
+post '/decks' do
+  deck = Deck.new(params[:deck])
+  if deck.save
+    flash[:message] = "Deck Created!"
+    redirect "/decks/#{deck.id}/cards/new"
+  else
+    flash[:message] = "Couldn't create deck."
+    redirect "/decks/new"
+  end
+end
+
 get '/decks/:deck_id' do
   user = User.find_by(id: session[:user_id])
   @deck = Deck.find_by(id: params[:deck_id])
