@@ -7,5 +7,5 @@ end
 post '/decks/:deck_id/cards' do
   deck = Deck.find(params[:deck_id])
   card = deck.cards.create(params[:card])
-  redirect '/'
+  redirect "/decks/#{deck.id}/cards/new"
 end
