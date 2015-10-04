@@ -1,5 +1,5 @@
 <h2>Create new cards:</h2>
-<form action="/cards" method="post">
+<form action="/decks/<%= @deck.id %>/cards" method="post">
   <label for="card entry">Card question:</label>
   <input type="text" name="card[question]"/>
   <label for="card answer"></label>Card answer:</label>
