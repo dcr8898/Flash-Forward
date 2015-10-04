@@ -1,5 +1,6 @@
 
 <% if current_user %>
+<h1><a href="/decks/new">Create a New Deck!</a></h1>
   <% @decks.each do |deck| %>
   <ul>
     <li><a href="/decks/<%= deck.id %>"><%= deck.name %></a></li>
