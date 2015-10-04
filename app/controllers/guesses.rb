@@ -5,7 +5,7 @@ post '/guesses/:guess_id' do
     guess.update(answered: true)
     flash[:message] = "Correct!"
   else
-    flash[:message] = "Wrong! Sorry :("
+    flash[:message] = "Incorrect! The correct answer was '#{guess.card.answer}'"
   end
 
   redirect "/rounds/#{guess.round_id}/card"
