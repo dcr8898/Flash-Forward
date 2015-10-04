@@ -17,7 +17,6 @@ get '/users/login' do
   erb :'users/login'
 end
 
-
 post '/users/login' do
   user_params = params[:user]
   user = User.find_by(name: user_params[:name])
@@ -37,6 +36,10 @@ get '/users/logout' do
 end
 
 get '/users/:id' do
-  @user = User.find_by(id: params[:id])
-  erb :'users/show'
+  if logged_in?
+    @user = User.find_by(id: params[:id])
+    erb :'users/show'
+  else
+    erb :not_authorized
+  end
 end
