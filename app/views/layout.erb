@@ -15,7 +15,7 @@
 <% if logged_in? %>
   <nav class="nav_bar"><a href="/users/<%= session[:user_id] %>"><%= current_user.name %></a> | <a href="/users/logout">Logout</a> | <a href="/">Home</a></nav>
 <% else %>
-  <nav class="nav_bar"><a href="/users/new">Register</a> | <a href="/users/login">Login</a> | <a href="/">Home</a></nav>
+  <nav class="nav_bar"><a href="/users/new">Sign up</a> | <a href="/users/login">Login</a> | <a href="/">Home</a></nav>
 <% end %>
   <div class="flash"><%= flash[:message] %></div>
   <%= yield %>
