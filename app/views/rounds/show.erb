@@ -1,4 +1,8 @@
 <div class="container">
-  <p>You've completed a round of <%= @round.deck.name %>. You answered <%= @round.answered_first_try %> / <%= @round.cards.count %> cards correctly on the first try. You submitted <%= @round.total_guesses %> total guesses before all cards were answered correctly.</p>
-  <p><a href="/decks">Play another game!</a></p>
+  <h5>You've completed a round of <%= @round.deck.name %>.</h5>
+  <h5>You answered <%= @round.answered_first_try %> / <%= @round.cards.count %> cards correctly on the first try.</h5>
+  <h5>You submitted <%= @round.total_guesses %> total guesses before all cards were answered correctly.</h5>
+</div>
+<div class="container">
+  <h5><a href="/decks">Play another game!</a></h5>
 </div>

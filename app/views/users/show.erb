@@ -1,23 +1,31 @@
 <div class="container">
-<h2><a href="/decks">Play a new game!</a></h2>
-  <h2><%= @user.name %> </h2>
-  <% @user.round_history.each do |deck_name, rounds| %>
-    <h4><%= deck_name %></h4>
-    <table class="stats table">
-      <tr>
-        <th>Date</th>
-        <th>Cards in Deck</th>
-        <th>First Guess Correct</th>
-        <th>Total Guesses</th>
-      </tr>
-      <% rounds.each do |round| %>
+  <h4><a href="/decks">Play a new game!</a></h4>
+</div>
+<div class="container">
+  <h4><em>Playing history for <%= @user.name %>:</em></h4>
+</div>
+<div class="container">
+  <% if @user.rounds.first %>
+    <% @user.round_history.each do |deck_name, rounds| %>
+      <h4><%= deck_name %></h4>
+      <table class="stats table">
         <tr>
-          <th><%= round.created_at.localtime.strftime("%B %-d, %Y") %></th>
-          <th><%= round.cards.count %></th>
-          <th><%= round.answered_first_try %></th>
-          <th><%= round.total_guesses %></th>
+          <th>Date</th>
+          <th>Cards in Deck</th>
+          <th>First Guess Correct</th>
+          <th>Total Guesses</th>
         </tr>
-      <% end %>
-    </table>
+        <% rounds.each do |round| %>
+          <tr>
+            <th><%= round.created_at.localtime.strftime("%B %-d, %Y") %></th>
+            <th><%= round.cards.count %></th>
+            <th><%= round.answered_first_try %></th>
+            <th><%= round.total_guesses %></th>
+          </tr>
+        <% end %>
+      </table>
+    <% end %>
+  <% else %>
+    <p>No rounds played yet</p>
   <% end %>
 </div>

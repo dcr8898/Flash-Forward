@@ -1,9 +1,13 @@
-<h3><%= @guess.deck.name %><h3>
-<main class='form-wrapper' role="main">
-  <p><%= @guess.card.question %></p>
-  <form method="post" action=<%= "/guesses/#{@guess.id}" %>>
-    <label for="answer" >Your answer:</label>
-    <input name="answer" type="text" />
-    <input type="submit" value="submit guess" class="button">
+<div class="container">
+  <h5><%= @guess.deck.name %></h5>
+</div>
+<div class="container">
+  <h3><%= @guess.card.question %></h3>
+  <form role="form" method="post" action=<%= "/guesses/#{@guess.id}" %>>
+    <div class="form-group">
+      <label for="answer" >Your answer:</label>
+      <input name="answer" type="text" />
+    </div>
+    <input type="submit" value="Submit Guess" class="btn btn-default">
   </form>
-</main>
+</div>

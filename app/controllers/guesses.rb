@@ -3,9 +3,9 @@ post '/guesses/:guess_id' do
   guess.increment!(:count)
   if guess.card.correct?(params[:answer])
     guess.update(answered: true)
-    flash[:message] = "Correct!"
+    flash[:message] = "<div class='container'><h3>Correct!</h3></div>"
   else
-    flash[:message] = "Incorrect! The correct answer was '#{guess.card.answer}'"
+    flash[:message] = "<div class='container'><h3>Incorrect! The correct answer was #{guess.card.answer}</h3></div>"
   end
 
   redirect "/rounds/#{guess.round_id}/card"
