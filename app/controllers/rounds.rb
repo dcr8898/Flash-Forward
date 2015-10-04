@@ -9,3 +9,13 @@ get '/rounds/:round_id/card' do
     erb :'cards/show'
   end
 end
+
+post '/rounds' do
+  deck = Deck.find_by(id: params[:deck_id])
+  if deck.nil?
+    flash[:message] = "Deck could not be located"
+    redirect request.referer
+  end
+  round = Round.create(user_id: current_user.id, deck_id: deck.id)
+  redirect "/rounds/#{round.id}/card"
+end
