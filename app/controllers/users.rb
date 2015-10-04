@@ -3,9 +3,10 @@ get '/users/new' do
 end
 
 post '/users' do
-  @user = User.new(params[:user])
-  if @user.save
-    redirect "/users/#{@user.id}"
+  user = User.new(params[:user])
+  if user.save
+    session[:user_id] = user.id
+    redirect "/users/#{user.id}"
   else
     @errors = @entry.errors.full_messages
     erb :'users/new'
