@@ -37,6 +37,26 @@ cards = new_cards.map { |card| Card.create(deck_id:  deck.id,
                                            answer:   card[1])}
 # End of Damian's deck
 
+# Phil's deck:
+deck = Deck.create(name: "Famous Athlete Nicknames")
+
+new_cards = [["Broadway Joe",   "Joe Namath"],
+             ["The Iron Horse", "Lou Gehrig"],
+             ["The Great One",  "Wayne Gretzky"],
+             ["King James",     "LeBron James"],
+             ["Flo-Jo",         "Florence Griffith Joyner"],
+             ["Mr. October",    "Reggie Jackson"],
+             ["Pinetree",       "Colin Meads"],
+             ["Air Jordan",     "Michael Jordan"],
+             ["Iron Mike",      "Mike Tyson"],
+             ["LT",             "Lawrence Taylor"],
+             ["Super Mario",    "Mario Lemieux"]]
+
+cards = new_cards.map { |card| Card.create(deck_id:  deck.id,
+                                           question: card[0],
+                                           answer:   card[1])}
+# End of Phil's deck
+
 # Place your new decks above this line!
 names = Array.new(50) { Faker::Name.first_name }.uniq
 names.sample(10).each { |user| User.create(name: user, password: user) }

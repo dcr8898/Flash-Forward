@@ -4,23 +4,35 @@ get '/decks' do
 end
 
 get '/decks/new' do
-  @deck = Deck.new
-  erb :'/decks/new'
+  if logged_in?
+    @deck = Deck.new
+    erb :'/decks/new'
+  else
+    erb :not_authorized
+  end
 end
 
 post '/decks' do
-  deck = Deck.new(params[:deck])
-  if deck.save
-    flash[:message] = "Deck Created!"
-    redirect "/decks/#{deck.id}/cards/new"
+  if logged_in?
+    deck = Deck.new(params[:deck])
+    if deck.save
+      flash[:message] = "Deck Created!"
+      redirect "/decks/#{deck.id}/cards/new"
+    else
+      flash[:message] = "Couldn't create deck."
+      redirect "/decks/new"
+    end
   else
-    flash[:message] = "Couldn't create deck."
-    redirect "/decks/new"
+    erb :not_authorized
   end
 end
 
 get '/decks/:deck_id' do
-  @deck = Deck.find_by(id: params[:deck_id])
-  @cards = @deck.cards.all
-  erb :'/decks/show'
+  if logged_in?
+    @deck = Deck.find_by(id: params[:deck_id])
+    @cards = @deck.cards.all
+    erb :'/decks/show'
+  else
+    erb :not_authorized
+  end
 end
