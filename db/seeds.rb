@@ -78,6 +78,7 @@ cards = new_cards.map { |card| Card.create(deck_id:  deck.id,
 # End of Rebecca's deck
 
 # David's Deck
+deck = Deck.create(name: "Mythology")
 new_cards = [["H.P. Lovecraft character also known as an Outer God",  "Nyarlathotep"],
              ["Son of Shiva and Parvati",                             "Ganeesha"],
              ["Bird-like creature in Hindu and Buddhist mythology",   "Garuda"],
