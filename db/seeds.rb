@@ -57,6 +57,26 @@ cards = new_cards.map { |card| Card.create(deck_id:  deck.id,
                                            answer:   card[1])}
 # End of Phil's deck
 
+# Rebecca's Deck
+deck = Deck.create(name: "ActiveRecord Methods")
+
+new_cards = [["Selects all items in the database where the column name equals the condition",                           "where"],
+             ["Selects all item in the the database",                                                                   "all"  ],
+             ["Orders the item in the datebase by the column name given, based on the passed paramater, :asc or :desc", "order"],
+             ["Limites the number of records returned",                                                                 "limit"],
+             ["Counts how many records exist",                                                                          "count"],
+             ["Gets specific attributes by column name(s)",                                                             "pluck"],
+             ["Returns the first item",                                                                                 "first"],
+             ["Returns the last item",                                                                                   "last"],
+             ["Finds an object by the primary key value",                                                                "find"],
+             ["Finds an object by the column name given",                                                             "find_by"]]
+
+cards = new_cards.map { |card| Card.create(deck_id:  deck.id,
+                                           question: card[0],
+                                           answer:   card[1])}
+
+# End of Rebecca's deck
+
 # Place your new decks above this line!
 names = Array.new(50) { Faker::Name.first_name }.uniq
 names.sample(10).each { |user| User.create(name: user, password: user) }
