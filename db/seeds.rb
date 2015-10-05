@@ -88,6 +88,10 @@ new_cards = [["H.P. Lovecraft character also known as an Outer God",  "Nyarlatho
              ["The first to eat the fruit of knowledge",              "Lilith"],
              ["Shapeshifter; known as White Bone Spirit",             "Baigujing"],
              ["Two headed dog in Greek mythology",                    "Orthrus"]]
+cards = new_cards.map { |card| Card.create(deck_id:  deck.id,
+                                           question: card[0],
+                                           answer:   card[1])}
+
 # End of David's Deck
 
 # Place your new decks above this line!
