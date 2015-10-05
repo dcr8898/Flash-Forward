@@ -8,7 +8,7 @@
   <% if @user.rounds.first %>
     <% @user.round_history.each do |deck_name, rounds| %>
       <h4><%= deck_name %></h4>
-      <table class="stats table">
+      <table class="table table-striped">
         <tr>
           <th>Date</th>
           <th>Cards in Deck</th>

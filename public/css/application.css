@@ -1,21 +1,4 @@
-/* h1, h3, a {
-  color: pink;
-  text-align: center;
+.alert-success {
+  font-size: 1.5em;
+text-align: center;
 }
-*/
-
-#question {
-  float:left;
-  margin-left: 20%;
-}
-
-#answer {
-  float: right;
-  margin-right: 20%;
-}
-
-#layout-header {
-  text-decoration: none;
-}
-
-

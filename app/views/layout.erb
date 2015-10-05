@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="/css/normalize.css">
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="/css/bootstrap.min.css">
-
   <!-- Optional theme -->
   <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
-
   <link rel="stylesheet" href="/css/application.css">
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -35,7 +32,9 @@
     </ul>
   </div>
 <% end %>
-<div class="flash"><%= flash[:message] %></div>
+<% unless flash[:message].nil? %>
+  <div class="alert-success"><%= flash[:message] %></div>
+<% end %>
   <%= yield %>
 </body>
 </html>
