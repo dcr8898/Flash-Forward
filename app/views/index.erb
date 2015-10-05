@@ -3,7 +3,7 @@
     <h4><a href="/decks/new">Create a New Deck!</a></h4>
   </div>
   <div class="container">
-  <h4>or play one of these decks:</h4>
+    <h4>or play one of these decks:</h4>
     <% @decks.each do |deck| %>
       <h5><a href="/decks/<%= deck.id %>"><%= deck.name %></a></h5>
     <% end %>
