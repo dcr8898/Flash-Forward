@@ -79,16 +79,6 @@ cards = new_cards.map { |card| Card.create(deck_id:  deck.id,
 
 # David's Deck
 
-# new_cards = [["H.P. Lovecraft character also known as an Outer God",  "Nyarlathotep"],
-#              ["Son of Shiva and Parvati",                             "Ganeesha"],
-#              ["Bird-like creature in Hindu and Buddhist mythology",   "Garuda"],
-#              ["A million eyes and mouths",                            "Metatron"],
-#              ["Cat that can speak human tongue",                      "Cait Sith"],
-#              ["Body of a bull, head of a hog",                        "Catoblepas"],
-#              ["Residents of the underworld in Japanese mythology",    "Yomotsu-Shikome"],
-#              ["The first to eat the fruit of knowledge",              "Lilith"],
-#              ["Shapeshifter; known as White Bone Spirit",             "Baigujing"],
-#              ["Two headed dog in Greek mythology",                    "Orthrus"]]
 deck = Deck.create(name: "Famous Athlete Nicknames")
 
 new_cards = [["H.P. Lovecraft character also known as an Outer God",  "Nyarlathotep"],
