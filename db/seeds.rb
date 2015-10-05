@@ -77,6 +77,27 @@ cards = new_cards.map { |card| Card.create(deck_id:  deck.id,
 
 # End of Rebecca's deck
 
+# David's Deck
+
+deck = Deck.create(name: "Mythology")
+
+new_cards = [["H.P. Lovecraft character also known as an Outer God",  "Nyarlathotep"],
+             ["Son of Shiva and Parvati",                             "Ganeesha"],
+             ["Bird-like creature in Hindu and Buddhist mythology",   "Garuda"],
+             ["A million eyes and mouths",                            "Metatron"],
+             ["Cat that can speak human tongue",                      "Cait Sith"],
+             ["Body of a bull, head of a hog",                        "Catoblepas"],
+             ["Residents of the underworld in Japanese mythology",    "Yomotsu-Shikome"],
+             ["The first to eat the fruit of knowledge",              "Lilith"],
+             ["Shapeshifter; known as White Bone Spirit",             "Baigujing"]]
+
+cards = new_cards.map { |card| Card.create(deck_id:  deck.id,
+                                           question: card[0],
+                                           answer:   card[1])}
+
+
+# End of David's Deck
+
 # Place your new decks above this line!
 names = Array.new(50) { Faker::Name.first_name }.uniq
 names.sample(10).each { |user| User.create(name: user, password: user) }
