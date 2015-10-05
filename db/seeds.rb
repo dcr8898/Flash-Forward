@@ -79,7 +79,7 @@ cards = new_cards.map { |card| Card.create(deck_id:  deck.id,
 
 # David's Deck
 
-deck = Deck.create(name: "Famous Athlete Nicknames")
+deck = Deck.create(name: "Mythology")
 
 new_cards = [["H.P. Lovecraft character also known as an Outer God",  "Nyarlathotep"],
              ["Son of Shiva and Parvati",                             "Ganeesha"],
