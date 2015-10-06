@@ -17,7 +17,7 @@
         </tr>
         <% rounds.each do |round| %>
           <tr>
-            <th><%= round.created_at.localtime.strftime("%B %-d, %Y") %></th>
+            <th><%= round.created_at.localtime.strftime("%B %-d, %Y") %> <%= "<a href='" + "/rounds/#{round.id}/card" + "'>continue</a>" if !round.available_cards.empty? %></th>
             <th><%= round.cards.count %></th>
             <th><%= round.answered_first_try %></th>
             <th><%= round.total_guesses %></th>
