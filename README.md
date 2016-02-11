@@ -1,4 +1,4 @@
-# _Flash Forward_ (formerly known as Kool Cards) 
+# _Flash Forward_
 
 ## Summary
 A web-based flash card application.  Users have a selection of flash card decks to choose from.  Users can select a deck and play a round of flash cards.  Statistics are available for all of user's round:
